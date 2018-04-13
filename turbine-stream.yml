@@ -1,0 +1,6 @@
+server:
+  port: 0
+
+turbine:
+  stream:
+    port: ${PORT:8989}
