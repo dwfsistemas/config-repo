@@ -1,0 +1,24 @@
+server:
+  port: ${PORT:8090}
+
+management:
+  security:
+    enabled: false
+ 
+   
+feign:
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+---
+spring:
+  profiles: docker
+  zipkin:
+    baseUrl: http://zipkin-server:9411/
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://security-server:9999/users/current        
