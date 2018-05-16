@@ -5,20 +5,18 @@ management:
   security:
     enabled: false
  
-   
-feign:
-  compression:
-    request:
-      enabled: true
-    response:
-      enabled: true
+security:
+  basic:
+    enabled: false
+  user:
+    password: none
+  oauth2:
+    resource:
+      preferTokenInfo: false
+      userInfoUri: http://localhost:9999/users/current
+
 ---
 spring:
   profiles: docker
   zipkin:
     baseUrl: http://zipkin-server:9411/
-
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://security-server:9999/users/current     
