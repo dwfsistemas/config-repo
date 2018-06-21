@@ -4,14 +4,24 @@ server:
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
-    aluno-service:
-      path: /aluno/**
-#      url: http://localhost:8080
-      serviceId: aluno-service
-    disciplina-service:
-      path: /disciplina/**
-#      url: http://localhost:8081
-      serviceId: disciplina-service
+    crud:
+      path: /crud/**
+      url: http://localhost:8082
+    compactador:
+      path: /compactador/**
+      url: http://localhost:8083
+    contabilizador:
+      path: /contabilizador/**
+      url: http://localhost:8090
+    server:
+      path: /server/**
+      url: http://localhost:8081
+    admin:
+      path: /admin/**
+      url: http://localhost:8084
+    security-server:
+      path: /security-server/**
+      url: http://localhost:9999
 
 #ribbon:
 #  eureka:
