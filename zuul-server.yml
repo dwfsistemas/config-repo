@@ -30,20 +30,9 @@ zuul:
     admin:
       path: /admin/**
 #      url: http://localhost:8084
-       serviceId: admin
+      serviceId: admin
     security-server:
       path: /security-server/**
 #      url: http://localhost:9999
       serviceId: security-server
 
-#ribbon:
-#  eureka:
-#    enabled: false
-      
-#aluno-service:
-#  ribbon:
-#    listOfServers: localhost:8080,localhost:18080
-    
-#disciplina-service:
-#  ribbon:
-#    listOfServers: localhost:8081,localhost:18081
