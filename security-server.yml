@@ -9,55 +9,8 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
 
 security:
   basic:
     enabled: false
-
-#server:
-#  port: ${PORT:9999}
-#
-#management:
-#  security:
-#    enabled: false
-#
-#feign:
-#  compression:
-#    request:
-#      enabled: true
-#    response:
-#      enabled: true
-#---
-#spring:
-#  profiles: docker
-#  zipkin:
-#    baseUrl: http://zipkin-server:9411/
-#
-#security:
-#  oauth2:
-#    client:
-#      access-token-validity-seconds: 1800
-#      authorized-grant-types: password,refresh_token
-#      client-id: coderef
-#      client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
-#      resource-ids: resources
-#      scope: read,write
-#
-#eureka:
-#  instance:
-#    leaseRenewalIntervalInSeconds: 10
-#    health-check-url-path: /actuator/health
-#  client:
-#    registryFetchIntervalSeconds: 5
-#    serviceUrl:
-#      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
-#
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
-#  endpoint:
-#    health:
-#      show-details: ALWAYS

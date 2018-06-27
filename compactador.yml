@@ -1,6 +1,13 @@
 server:
   port: ${PORT:8083}
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    
 management:
   security:
     enabled: false
@@ -14,9 +21,3 @@ security:
     resource:
       preferTokenInfo: false
       userInfoUri: http://localhost:9999/users/current
-
----
-spring:
-  profiles: docker
-  zipkin:
-    baseUrl: http://zipkin-server:9411/

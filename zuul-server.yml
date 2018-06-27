@@ -1,27 +1,40 @@
 server:
   port: ${PORT:8000}
-    
+
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+ instance:
+   preferIpAddress: true  
+     
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
     crud:
       path: /crud/**
-      url: http://localhost:8082
+#      url: http://localhost:8082
+      serviceId: crud
     compactador:
       path: /compactador/**
-      url: http://localhost:8083
+#      url: http://localhost:8083
+      serviceId: compactador
     contabilizador:
       path: /contabilizador/**
-      url: http://localhost:8090
+#      url: http://localhost:8090
+      serviceId: contabilizador
     server:
       path: /server/**
-      url: http://localhost:8081
+#      url: http://localhost:8081
+      serviceId: server
     admin:
       path: /admin/**
-      url: http://localhost:8084
+#      url: http://localhost:8084
+       serviceId: admin
     security-server:
       path: /security-server/**
-      url: http://localhost:9999
+#      url: http://localhost:9999
+      serviceId: security-server
 
 #ribbon:
 #  eureka:
@@ -34,14 +47,3 @@ zuul:
 #disciplina-service:
 #  ribbon:
 #    listOfServers: localhost:8081,localhost:18081
-
----
-spring:
-  profiles: docker
-  zipkin:
-    baseUrl: http://zipkin-server:9411/
-
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://security-server:9999/users/current        
