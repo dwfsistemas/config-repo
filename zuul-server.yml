@@ -42,13 +42,3 @@ zuul:
 #      url: http://localhost:9999
       serviceId: security-server
       stripPrefix: false
-
-security:
-  basic:
-    enabled: false
-  user:
-    password: none
-  oauth2:
-    resource:
-      preferTokenInfo: false
-      userInfoUri: http://security-server:9999/users/current
