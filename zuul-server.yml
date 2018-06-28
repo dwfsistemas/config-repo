@@ -1,17 +1,13 @@
 server:
   port: ${PORT:8000}
 
-management:
-  security:
-    enabled: false
-
-eureka:
- client:
-   fetchRegistry: true
-   serviceUrl:
-     defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
- instance:
-   preferIpAddress: true  
+#eureka:
+# client:
+#   fetchRegistry: true
+#   serviceUrl:
+#     defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+# instance:
+#   preferIpAddress: true
      
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
@@ -46,3 +42,8 @@ zuul:
 #      url: http://localhost:9999
       serviceId: security-server
       stripPrefix: false
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://security-server:9999/users/current
