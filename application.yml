@@ -3,13 +3,24 @@ server:
 
 info:
   id: ${spring.application.name}
-
+ 
 logging:
   level: debug
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+  instance:
+    preferIpAddress: true  
 
 ---
 spring:
   profiles: docker
+
+logging:
+  level: debug
+
 
 eureka:
  client:

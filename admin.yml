@@ -1,17 +1,12 @@
 server:
   port: ${PORT:8084}
-
 management:
   security:
     enabled: false
- 
-
 security:
   oauth2:
     resource:
-      userInfoUri: http://security-server:9999/users/current        
-       
-      
+      userInfoUri: http://security-server:9999/users/current
 eureka:   
   instance:
     leaseRenewalIntervalInSeconds: 10
@@ -20,7 +15,6 @@ eureka:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
-
 management:
   endpoints:
     web:
