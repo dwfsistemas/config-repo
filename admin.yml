@@ -1,25 +1,32 @@
 server:
   port: ${PORT:8084}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
 management:
   security:
     enabled: false
+
 security:
+  basic:
+    enabled: false
+  user:
+    password: none
   oauth2:
     resource:
+      preferTokenInfo: false
       userInfoUri: http://security-server:9999/users/current
-eureka:   
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    health-check-url-path: /actuator/health
-  client:
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+
 management:
   endpoints:
     web:
       exposure:
-        include: "*"  
+        include: "*"
   endpoint:
     health:
       show-details: ALWAYS
