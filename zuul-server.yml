@@ -9,7 +9,6 @@ eureka:
    preferIpAddress: true  
      
 zuul:
-  ignoredServices: *
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
     crud:
