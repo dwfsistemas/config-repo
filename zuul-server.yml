@@ -9,32 +9,39 @@ eureka:
    preferIpAddress: true  
      
 zuul:
+  ignoredServices: *
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
     crud:
       path: /crud/**
 #      url: http://localhost:8082
       serviceId: crud
+      stripPrefix: false
     compactador:
       path: /compactador/**
 #      url: http://localhost:8083
       serviceId: compactador
+      stripPrefix: false
     contabilizador:
       path: /contabilizador/**
 #      url: http://localhost:8090
       serviceId: contabilizador
+      stripPrefix: false
     server:
       path: /server/**
 #      url: http://localhost:8081
       serviceId: server
+      stripPrefix: false
     admin:
       path: /admin/**
 #      url: http://localhost:8084
       serviceId: admin
+      stripPrefix: false
     security-server:
       path: /security-server/**
 #      url: http://localhost:9999
       serviceId: security-server
+      stripPrefix: false
 
 
 security:
