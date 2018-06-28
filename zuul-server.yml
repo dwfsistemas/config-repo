@@ -13,37 +13,31 @@ zuul:
   routes:
     crud:
       path: /crud/**
-#      url: http://localhost:8082
-      serviceId: crud
-      stripPrefix: false
+      url: http://localhost:8082
+#      serviceId: crud
+#      stripPrefix: false
     compactador:
       path: /compactador/**
-#      url: http://localhost:8083
-      serviceId: compactador
-      stripPrefix: false
+      url: http://localhost:8083
+#      serviceId: compactador
+#      stripPrefix: false
     contabilizador:
       path: /contabilizador/**
-#      url: http://localhost:8090
-      serviceId: contabilizador
-      stripPrefix: false
+      url: http://localhost:8090
+#      serviceId: contabilizador
+#      stripPrefix: false
     server:
       path: /server/**
-#      url: http://localhost:8081
-      serviceId: server
-      stripPrefix: false
+      url: http://localhost:8081
+#      serviceId: server
+#      stripPrefix: false
     admin:
       path: /admin/**
-#      url: http://localhost:8084
-      serviceId: admin
-      stripPrefix: false
+      url: http://localhost:8084
+#      serviceId: admin
+#      stripPrefix: false
     security-server:
       path: /security-server/**
-#      url: http://localhost:9999
-      serviceId: security-server
-      stripPrefix: false
-
-
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://security-server:9999/users/current
+      url: http://localhost:9999
+#      serviceId: security-server
+#      stripPrefix: false
