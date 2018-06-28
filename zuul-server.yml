@@ -1,8 +1,13 @@
 server:
   port: ${PORT:8000}
 
+management:
+  security:
+    enabled: false
+
 eureka:
  client:
+   fetchRegistry: true
    serviceUrl:
      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
  instance:
@@ -13,7 +18,7 @@ zuul:
   routes:
     crud:
       path: /crud/**
-#      url: http://localhost:8082
+#      url: http://localhost:8082verifica-terminal-existe-na-conta
       serviceId: crud
       stripPrefix: false
     compactador:
@@ -41,9 +46,3 @@ zuul:
 #      url: http://localhost:9999
       serviceId: security-server
       stripPrefix: false
-
-
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://security-server:9999/users/current
