@@ -38,3 +38,7 @@ zuul:
     zuul-server:
       path: /zuul-server/**
       serviceId: zuul-server
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
