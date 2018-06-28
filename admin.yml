@@ -11,3 +11,20 @@ eureka:
 management:
   security:
     enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    endpoint:
+      health:
+        show-details: ALWAYS
+
+security:
+  basic:
+    enabled: false
+  user:
+    password: none
+  oauth2:
+    resource:
+      preferTokenInfo: false
+      userInfoUri: http://security-server:9999/users/current
