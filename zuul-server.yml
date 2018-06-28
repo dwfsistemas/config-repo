@@ -43,3 +43,7 @@ zuul:
       path: /eureka-server/**
       serviceId: eureka-server
       stripPrefix: false
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
