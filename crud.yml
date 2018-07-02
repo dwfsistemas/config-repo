@@ -20,4 +20,4 @@ security:
   oauth2:
     resource:
       preferTokenInfo: false
-      userInfoUri: http://security-server:9999/users/current
+      userInfoUri: http://localhost:9999/users/current
