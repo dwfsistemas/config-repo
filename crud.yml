@@ -22,7 +22,6 @@ security:
       preferTokenInfo: false
       userInfoUri: http://localhost:9999/users/current
 
-
 ---
 spring:
   profiles: docker
