@@ -11,13 +11,6 @@ eureka:
 management:
   security:
     enabled: false
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-    endpoint:
-      health:
-        show-details: ALWAYS
 
 security:
   basic:
@@ -27,7 +20,16 @@ security:
   oauth2:
     resource:
       preferTokenInfo: false
-      userInfoUri: http://locahost:9999/users/current
+      userInfoUri: http://security-server:9999/users/current
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
 
 ---
 spring:
@@ -41,4 +43,11 @@ security:
   oauth2:
     resource:
       preferTokenInfo: false
-      userInfoUri: http://security-server:9999/users/current
+      userInfoUri: http://security-server.dwfsistemas:9999/users/current
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
+  instance:
+    preferIpAddress: true

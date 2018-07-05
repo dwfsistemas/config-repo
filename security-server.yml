@@ -35,3 +35,10 @@ security:
     resource:
       preferTokenInfo: false
       userInfoUri: http://security-server.dwfsistemas:9999/users/current
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
+  instance:
+    preferIpAddress: true
