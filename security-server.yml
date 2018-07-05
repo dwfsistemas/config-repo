@@ -34,4 +34,4 @@ security:
   oauth2:
     resource:
       preferTokenInfo: false
-      userInfoUri: http://security-server:9999/users/current
+      userInfoUri: http://security-server.dwfsistemas:9999/users/current
