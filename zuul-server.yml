@@ -57,7 +57,7 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
   instance:
-    hostname: ${HOST_NAME:http://load-balancer-1235268680.us-east-1.elb.amazonaws.com}
+    hostname: ${vcap.application.uris[0]}
     preferIpAddress: false
 
 zuul:
