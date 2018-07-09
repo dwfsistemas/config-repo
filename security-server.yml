@@ -37,11 +37,8 @@ security:
       userInfoUri: http://security-server.dwfsistemas:9999/users/current
 
 eureka:
-  instance:
-    data-center-info:
-      datacenter: Amazon
   client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      default-zone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@load-balancer-1235268680.us-east-1.elb.amazonaws.com:8761/eureka}
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
+  instance:
+    preferIpAddress: true
