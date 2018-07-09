@@ -64,35 +64,35 @@ zuul:
   routes:
     crud:
       path: /crud/**
-      url: http://crud.dwfsistemas:8082
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8082
 #      serviceId: crud
     compactador:
       path: /compactador/**
-      url: http://compactador.dwfsistemas:8083
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8083
 #      serviceId: compactador
     contabilizador:
       path: /contabilizador/**
-      url: http://contabilizador.dwfsistemas:8090
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8090
 #      serviceId: contabilizador
     server:
       path: /server/**
-      url: http://server.dwfsistemas:8081
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8081
 #      serviceId: server
     admin:
       path: /admin/**
-      url: http://admin.dwfsistemas:8084
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8084
 #      serviceId: admin
     security-server:
       path: /security-server/**
-      url: http://security-server.dwfsistemas:9999
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999
 #      serviceId: security-server
     zuul-server:
       path: /zuul-server/**
-      url: http://zuul-server.dwfsistemas:8000
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000
 #      serviceId: zuul-server
       stripPrefix: false
     eureka-server:
       path: /eureka-server/**
-      url: http:eureka-server.dwfsistemas:8761
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8761
 #      serviceId: eureka-server
       stripPrefix: false
