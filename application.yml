@@ -25,6 +25,6 @@ logging:
 eureka:
  client:
    serviceUrl:
-     defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server:8761/eureka}
+     defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
  instance:
    preferIpAddress: true  
