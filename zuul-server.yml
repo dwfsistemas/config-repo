@@ -57,7 +57,7 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
   instance:
-    preferIpAddress: false
+    preferIpAddress: true
 
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
