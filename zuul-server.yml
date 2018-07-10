@@ -53,11 +53,18 @@ spring:
   profiles: docker
 
 eureka:
+  datacenter: cloud
   client:
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
-  instance:
-    preferIpAddress: false
+    eurekaServerDNSName: dwfsistemas
+    eurekaServerPort: 8761
+    eurekaServerURLContext: eureka-server
+    region: us-east-1
+    registerWithEureka: true
+    fetchRegistry: true
+    useDnsForFetchingServiceUrls: true
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: true
 
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
