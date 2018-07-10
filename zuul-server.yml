@@ -57,9 +57,10 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
   instance:
-    statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com/info
-    healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com/health
-    homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com/
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+    statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/info
+    healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/health
+    homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/
     hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
     preferIpAddress: false
 
