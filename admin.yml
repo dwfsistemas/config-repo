@@ -51,4 +51,5 @@ eureka:
     statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8084/info
     healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8084/health
     homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8084/
+    hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
     preferIpAddress: false
