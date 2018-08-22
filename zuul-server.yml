@@ -80,7 +80,7 @@ zuul:
 #      serviceId: contabilizador
     server:
       path: /server/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8081
+      url: http://18.214.233.48:8081
 #      serviceId: server
     admin:
       path: /admin/**
