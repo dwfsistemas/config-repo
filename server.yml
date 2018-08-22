@@ -9,7 +9,7 @@ eureka:
     statusPageUrl: http://18.214.233.48:8081/info
     healthCheckUrl: http://18.214.233.48:8081/health
     homePageUrl: http://18.214.233.48:8081/
-    hostname: 18.214.233.48:8081
+    hostname: 18.214.233.48
     preferIpAddress: false
 
 management:
@@ -48,5 +48,5 @@ eureka:
     statusPageUrl: http://18.214.233.48:8081/info
     healthCheckUrl: http://18.214.233.48:8081/health
     homePageUrl: http://18.214.233.48:8081/
-    hostname: 18.214.233.48:8081
+    hostname: 18.214.233.48
     preferIpAddress: false
