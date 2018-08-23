@@ -4,13 +4,9 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
   instance:
-    statusPageUrl: http://18.214.233.48:8081/info
-    healthCheckUrl: http://18.214.233.48:8081/health
-    homePageUrl: http://18.214.233.48:8081/
-    hostname: 18.214.233.48
-    preferIpAddress: false
+    preferIpAddress: true
 
 management:
   security:
@@ -24,7 +20,7 @@ security:
   oauth2:
     resource:
       preferTokenInfo: false
-      userInfoUri: http://security-server.dwfsistemas:9999/users/current
+      userInfoUri: http://localhost:9999/users/current
 
 ---
 spring:
