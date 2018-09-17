@@ -4,7 +4,7 @@ server:
 eureka:
  client:
    serviceUrl:
-     defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+     defaultZone: ${EUREKA_URI:https://eurekaUser:eurekaPassword@localhost:8761/eureka}
  instance:
    preferIpAddress: true
      
@@ -55,12 +55,12 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
+      defaultZone: ${EUREKA_URI:https://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
   instance:
-    statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/info
-    healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/health
-    homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/
-    hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
+    statusPageUrl: https://app.conexao-dwfsistemas.com:8000/info
+    healthCheckUrl: https://app.conexao-dwfsistemas.com:8000/health
+    homePageUrl: https://app.conexao-dwfsistemas.com:8000/
+    hostname: app.conexao-dwfsistemas.com
     preferIpAddress: false
 
 zuul:
@@ -68,35 +68,35 @@ zuul:
   routes:
     crud:
       path: /crud/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8082
+      url: https://app.conexao-dwfsistemas.com:8082
 #      serviceId: crud
     compactador:
       path: /compactador/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8083
+      url: https://app.conexao-dwfsistemas.com:8083
 #      serviceId: compactador
     contabilizador:
       path: /contabilizador/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8090
+      url: https://app.conexao-dwfsistemas.com:8090
 #      serviceId: contabilizador
     server:
       path: /server/**
-      url: http://18.214.233.48:8081
+      url: https://18.214.233.48:8081
 #      serviceId: server
     admin:
       path: /admin/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8084
+      url: https://app.conexao-dwfsistemas.com:8084
 #      serviceId: admin
     security-server:
       path: /security-server/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999
+      url: https://app.conexao-dwfsistemas.com:9999
 #      serviceId: security-server
     zuul-server:
       path: /zuul-server/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000
+      url: https://app.conexao-dwfsistemas.com:8000
 #      serviceId: zuul-server
       stripPrefix: false
     eureka-server:
       path: /eureka-server/**
-      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8761
+      url: https://app.conexao-dwfsistemas.com:8761
 #      serviceId: eureka-server
       stripPrefix: false

@@ -8,7 +8,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: https://${eureka.instance.hostname}:${server.port}/eureka/
       
 ---
 spring:
@@ -22,7 +22,7 @@ eureka:
     hostname: peer1
   client:
     serviceUrl:
-      defaultZone: http://peer2:8763/eureka/  
+      defaultZone: https://peer2:8763/eureka/
   
 ---
 spring:
@@ -36,4 +36,4 @@ eureka:
     hostname: peer2
   client:
     serviceUrl:
-      defaultZone: http://peer1:8762/eureka/  
+      defaultZone: https://peer1:8762/eureka/
