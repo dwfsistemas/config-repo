@@ -41,8 +41,8 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
   instance:
-    statusPageUrl: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999/info
-    healthCheckUrl: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999/health
-    homePageUrl: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999/
+    statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999/info
+    healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999/health
+    homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999/
     hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
     preferIpAddress: false

@@ -6,11 +6,7 @@ eureka:
    serviceUrl:
      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
  instance:
-   statusPageUrl: https://localhost:8000/info
-   healthCheckUrl: https://localhost:8000/health
-   homePageUrl: https://localhost:8000/
-   hostname: localhost
-   preferIpAddress: false
+   preferIpAddress: true
      
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
@@ -61,9 +57,9 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
   instance:
-    statusPageUrl: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/info
-    healthCheckUrl: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/health
-    homePageUrl: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/
+    statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/info
+    healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/health
+    homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000/
     hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
     preferIpAddress: false
 
@@ -72,15 +68,15 @@ zuul:
   routes:
     crud:
       path: /crud/**
-      url: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8082
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8082
 #      serviceId: crud
     compactador:
       path: /compactador/**
-      url: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8083
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8083
 #      serviceId: compactador
     contabilizador:
       path: /contabilizador/**
-      url: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8090
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8090
 #      serviceId: contabilizador
     server:
       path: /server/**
@@ -88,19 +84,19 @@ zuul:
 #      serviceId: server
     admin:
       path: /admin/**
-      url: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8084
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8084
 #      serviceId: admin
     security-server:
       path: /security-server/**
-      url: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:9999
 #      serviceId: security-server
     zuul-server:
       path: /zuul-server/**
-      url: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8000
 #      serviceId: zuul-server
       stripPrefix: false
     eureka-server:
       path: /eureka-server/**
-      url: https://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8761
+      url: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8761
 #      serviceId: eureka-server
       stripPrefix: false
