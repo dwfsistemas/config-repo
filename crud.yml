@@ -8,9 +8,9 @@ eureka:
   instance:
     nonSecurePortEnabled: false
     securePortEnabled: true
-    statusPageUrl: https://${eureka.hostname}:${server.port}/info
-    healthCheckUrl: https://${eureka.hostname}:${server.port}/health
-    homePageUrl: https://${eureka.hostname}:${server.port}/
+    statusPageUrl: https://${eureka.hostname}:8082/info
+    healthCheckUrl: https://${eureka.hostname}:8082/health
+    homePageUrl: https://${eureka.hostname}:8082/
     preferIpAddress: false
 
 management:
