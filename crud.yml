@@ -11,7 +11,7 @@ eureka:
     statusPageUrl: https://${eureka.hostname}:8082/info
     healthCheckUrl: https://${eureka.hostname}:8082/health
     homePageUrl: https://${eureka.hostname}:8082/
-    preferIpAddress: false
+    preferIpAddress: true
 
 management:
   security:
