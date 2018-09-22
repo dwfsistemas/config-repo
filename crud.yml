@@ -6,9 +6,6 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
   instance:
-    statusPageUrl: https://${eureka.hostname}:8082/info
-    healthCheckUrl: https://${eureka.hostname}:8082/health
-    homePageUrl: https://${eureka.hostname}:8082/
     preferIpAddress: true
 
 management:
