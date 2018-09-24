@@ -6,13 +6,8 @@ eureka:
    serviceUrl:
      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
  instance:
-   nonSecurePortEnabled: false
-   securePortEnabled: true
-   statusPageUrl: https://${eureka.hostname}:8000/info
-   healthCheckUrl: https://${eureka.hostname}:8000/health
-   homePageUrl: https://${eureka.hostname}:8000/
    preferIpAddress: true
-
+     
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
@@ -52,7 +47,7 @@ zuul:
 ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 60000
-  isSecure: true
+
 ---
 spring:
   profiles: docker
