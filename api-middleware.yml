@@ -11,6 +11,13 @@ eureka:
 management:
   security:
     enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
 
 ---
 spring:
@@ -26,3 +33,12 @@ eureka:
     homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8085/
     hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
     preferIpAddress: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
