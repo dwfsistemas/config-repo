@@ -18,9 +18,6 @@ security:
   user:
     password: none
   oauth2:
-    client:
-      clientId: client-password
-      clientSecret: secret
     resource:
       preferTokenInfo: false
       userInfoUri: http://localhost:9999/users/current
@@ -35,9 +32,6 @@ security:
   user:
     password: none
   oauth2:
-    client:
-      clientId: client-password
-      clientSecret: secret
     resource:
       preferTokenInfo: false
       userInfoUri: http://security-server.dwfsistemas:9999/users/current
