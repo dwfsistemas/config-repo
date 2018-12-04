@@ -42,3 +42,6 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+      
+logging:
+  level: info      
