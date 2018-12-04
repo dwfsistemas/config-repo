@@ -15,10 +15,6 @@ eureka:
 spring:
   profiles: docker
 
-logging:
-  level: debug
-
-
 eureka:
  client:
    serviceUrl:
