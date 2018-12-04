@@ -41,7 +41,4 @@ management:
         include: "*"
   endpoint:
     health:
-      show-details: ALWAYS
-      
-logging:
-  level: info      
+      show-details: ALWAYS         
