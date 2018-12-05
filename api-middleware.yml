@@ -7,8 +7,8 @@ eureka:
       defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
   instance:
     statusPageUrl: http://admin:admin@api-middleware:8085/actuator/info
-    healthCheckUrl: http://api-middleware:8085/actuator/health
-    homePageUrl: http://api-middleware:8085/
+    healthCheckUrl: http://admin:admin@api-middleware:8085/actuator/health
+    homePageUrl: http://admin:admin@api-middleware:8085/
     preferIpAddress: true
     
 management:
