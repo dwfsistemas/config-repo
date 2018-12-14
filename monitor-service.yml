@@ -33,10 +33,30 @@ eureka:
   instance:
     hostname: localhost
 
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
 ---
 spring:
   profiles: docker
-
+  datasource:
+    url: jdbc:postgresql://middleware.ceoiszqo5pi6.us-east-1.rds.amazonaws.com:5432/middleware
+    username: postgres
+    password: dwfsistemas
+    driver-class-name: org.postgresql.Driver
+  security:
+    user:
+      name: m0n1t0r
+      password: dwf@m0n1t0r
+      roles: SYSTEM
 eureka:
   client:
     serviceUrl:
