@@ -1,0 +1,43 @@
+server:
+  port: ${PORT:8087}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+  instance:
+    hostname: localhost
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+---
+spring:
+  profiles: docker
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
+  instance:
+    statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8087/actuator/info
+    healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8087/actuator/health
+    homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8087/
+    hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
+    preferIpAddress: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
