@@ -57,16 +57,23 @@ ribbon:
 
 hystrix:
   command:
-    email-service:
+    default:
       execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 600000
-    monitor-service:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 600000
+        timeout:
+          enabled: false
+
+#hystrix:
+#  command:
+#    email-service:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 600000
+#    monitor-service:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 600000
 
 ---
 spring:
