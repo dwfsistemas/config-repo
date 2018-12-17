@@ -44,6 +44,11 @@ management:
     health:
       show-details: ALWAYS
 
+#CONFIGURAÇÃO DE FALLBACK DO FEIGN
+feign:
+  hystrix:
+    enabled: true
+
 ---
 spring:
   profiles: docker
