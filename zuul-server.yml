@@ -43,6 +43,9 @@ zuul:
       path: /eureka-server/**
       serviceId: eureka-server
       stripPrefix: false
+    email-service:
+      path: /email-service/**
+      serviceId: email-service
 
 ribbon:
   ConnectTimeout: 3000
