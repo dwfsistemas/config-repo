@@ -54,26 +54,15 @@ ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 60000
 
-
 hystrix:
   command:
     default:
       execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
         timeout:
           enabled: false
-
-#hystrix:
-#  command:
-#    email-service:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 600000
-#    monitor-service:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 600000
 
 ---
 spring:
