@@ -58,8 +58,8 @@ ribbon:
   ConnectTimeout: 6000
   MaxHttpConnectionsPerHost: 50
   MaxTotalHttpConnections: 500
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 0
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 1
 
 
 #hystrix:
