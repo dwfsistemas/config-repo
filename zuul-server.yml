@@ -51,18 +51,26 @@ zuul:
       serviceId: email-service
 
 ribbon:
-  ConnectTimeout: 3000
+  PoolMaxThreads: 500
+  MaxTotalConnections: 500
+  MaxConnectionsPerHost: 50
   ReadTimeout: 60000
+  ConnectTimeout: 6000
+  MaxHttpConnectionsPerHost: 50
+  MaxTotalHttpConnections: 500
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-        timeout:
-          enabled: false
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 60000
+#        timeout:
+#          enabled: false
 
 ---
 spring:
