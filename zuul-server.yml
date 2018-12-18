@@ -51,9 +51,8 @@ zuul:
       serviceId: email-service
 
 ribbon:
-  enabled: false
   ReadTimeout: 60000
-  ConnectTimeout: 6000
+  ConnectTimeout: 3000
 
 ---
 spring:
