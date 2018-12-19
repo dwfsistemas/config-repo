@@ -51,6 +51,9 @@ feign:
 
 security:
   oauth2:
+    client:
+      client-id: client-password
+      client-secret: secret
     resource:
       preferTokenInfo: false
       userInfoUri: http://localhost:9999/users/current
