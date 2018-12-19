@@ -45,15 +45,26 @@ management:
       show-details: ALWAYS
 
 #CONFIGURAÇÃO DE FALLBACK DO FEIGN
-
 feign:
-  client:
-    config:
-      default:
-        connectTimeout: 60000
-        readTimeout: 6000
   hystrix:
     enabled: true
+
+security:
+  oauth2:
+    resource:
+      preferTokenInfo: false
+      userInfoUri: http://localhost:9999/users/current
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnU3OdWikPBlVtZgfLIms
+          Jc/cRVYrO1rPe7HL21m8iHpDvFhv45P1hjt0XnFwvn9m+6twW5m76hCP3pFjd8F6
+          qGFwxOX0LdrCJ2xgbD1da6wl1Fpnt9z1lUomqm1Lqhi8d83Q2VqM1gZj588hhmB8
+          ecesNXdhc/rQfg8xQtG+O6S1Bsy4FezlCeQfBykCL3Blew0n2bUmmAf0vXcmu4Hm
+          Xri6YmwUtQE49uua+ILPF4z/ELgCbysR9cl/8g55Djdj26d6+1jlwtE61geAqzBi
+          YbXz9Y59QgG1MTM/s5fxDtrvA+8tAWDZQasTwIKQH83t4Uae5dPaaSMyt16j65v3
+          5QIDAQAB
+          -----END PUBLIC KEY-----
 
 ---
 spring:
