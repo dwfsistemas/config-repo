@@ -46,6 +46,11 @@ management:
 
 #CONFIGURAÇÃO DE FALLBACK DO FEIGN
 feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
   hystrix:
     enabled: true
 
@@ -56,7 +61,11 @@ hystrix:
         isolation:
           strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds:
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 
 ---
 spring:
