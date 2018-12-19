@@ -45,7 +45,13 @@ management:
       show-details: ALWAYS
 
 #CONFIGURAÇÃO DE FALLBACK DO FEIGN
+
 feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 6000
   hystrix:
     enabled: true
 
