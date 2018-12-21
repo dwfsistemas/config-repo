@@ -21,11 +21,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         temp:
           use_jdbc_metadata_defaults: false
-  security:
-    user:
-      name: admin
-      password: admin
-      roles: SYSTEM
 eureka:
   client:
     serviceUrl:
