@@ -10,9 +10,6 @@ spring:
     username: postgres
     password: dwf@sistemas
     driver-class-name: org.postgresql.Driver
-  jackson:
-    serialization:
-      write_dates_as_timestamps: false
   jpa:
     show-sql: false
     hibernate:
