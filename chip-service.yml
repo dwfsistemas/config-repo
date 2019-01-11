@@ -1,0 +1,75 @@
+server:
+  port: ${PORT:8088}
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:postgresql://localhost:5432/middleware
+    username: postgres
+    password: dwf@sistemas
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@localhost:8761/eureka}
+  instance:
+    hostname: localhost
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+---
+spring:
+  profiles: docker
+  datasource:
+    url: jdbc:postgresql://middleware.ceoiszqo5pi6.us-east-1.rds.amazonaws.com:5432/middleware
+    username: postgres
+    password: dwfsistemas
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+  security:
+    oauth2:
+      resource:
+        preferTokenInfo: false
+        userInfoUri: http://security-server.dwfsistemas:9999/users/current
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eurekaUser:eurekaPassword@eureka-server.dwfsistemas:8761/eureka}
+  instance:
+    statusPageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8088/actuator/info
+    healthCheckUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8088/actuator/health
+    homePageUrl: http://load-balancer-1235268680.us-east-1.elb.amazonaws.com:8088/
+    hostname: load-balancer-1235268680.us-east-1.elb.amazonaws.com
+    preferIpAddress: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
