@@ -51,9 +51,10 @@ zuul:
       serviceId: email-service
   ws:
     brokerages:
-      hello:
+      monitor-service:
         end-points: /my-custom-broker
         brokers:  /topic
+        destination-prefixes: /app
 
 
 ribbon:
