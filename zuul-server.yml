@@ -53,8 +53,6 @@ zuul:
     brokerages:
       monitor-service:
         end-points: /my-custom-broker
-        brokers:  /topic
-        destination-prefixes: /app
 
 
 ribbon:
