@@ -49,10 +49,6 @@ zuul:
     email-service:
       path: /email-service/**
       serviceId: email-service
-  ws:
-    brokerages:
-      monitor-service:
-        end-points: /my-custom-broker
 
 
 ribbon:
