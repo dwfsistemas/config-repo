@@ -49,6 +49,12 @@ zuul:
     email-service:
       path: /email-service/**
       serviceId: email-service
+  ws:
+    brokerages:
+      hello:
+        end-points: /my-custom-broker
+        brokers:  /topic
+
 
 ribbon:
   ReadTimeout: 60000
