@@ -38,6 +38,16 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+security:
+  basic:
+    enabled: false
+  user:
+    password: none
+  oauth2:
+    resource:
+      preferTokenInfo: false
+      userInfoUri: http://localhost:9999/users/current
+
 
 ---
 spring:
