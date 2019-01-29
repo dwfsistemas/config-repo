@@ -49,6 +49,9 @@ zuul:
     email-service:
       path: /email-service/**
       serviceId: email-service
+    chip-service:
+      path: /chip-service/**
+      serviceId: chip-service
 
 
 ribbon:
